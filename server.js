@@ -33,11 +33,14 @@ app.get("/api/whoami", function (req, res) {
       ipaddress: req.ip,
       language: req.headers['accept-language'],
       software: req.headers['user-agent'],
-      other: req.headers.host
   }
 
   res.json(whoamiApiResObj);
-  console.log(`${req.ip}`)
+  console.log(`
+    ipaddress : ${whoamiApiResObj.ipaddress} \n
+    language:  ${whoamiApiResObj.language} \n
+    software: ${ whoamiApiResObj.software} \n  
+  `)
 });
 
 
